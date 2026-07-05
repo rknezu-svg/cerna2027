@@ -329,6 +329,75 @@
   .btn:hover{ background:var(--rust-bright); }
   .btn::after{ content:"→"; }
 
+  /* ---------- INQUIRY FORM ---------- */
+  .inquiry{
+    background:var(--ink-2);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:100px 5vw;
+  }
+  .inquiry-inner{
+    max-width:640px;
+    margin:0 auto;
+  }
+  .inquiry-head{
+    text-align:center;
+    margin-bottom:44px;
+  }
+  .inquiry-head h2{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    font-size:clamp(26px, 3.2vw, 40px);
+    letter-spacing:0.01em;
+  }
+  .inquiry-head h2 span{ color:var(--rust); }
+  .inquiry-head p{
+    margin-top:14px;
+    color:var(--bone-dim);
+    font-size:15px;
+  }
+  .form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .form-field{ display:flex; flex-direction:column; gap:8px; }
+  .form-field.full{ grid-column:1 / -1; }
+  .form-field label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--bone-dim);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+  .form-field input{
+    background:transparent;
+    border:none;
+    border-bottom:1px solid var(--line);
+    color:var(--bone);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    padding:10px 2px;
+    outline:none;
+    transition:border-color 0.2s ease;
+  }
+  .form-field input::placeholder{ color:rgba(234,229,218,0.28); }
+  .form-field input:focus{ border-color:var(--rust); }
+  .inquiry-submit{
+    margin-top:36px;
+    text-align:center;
+  }
+  .inquiry-submit .btn{
+    border:none;
+    cursor:pointer;
+    font-family:'Oswald', sans-serif;
+    width:100%;
+    justify-content:center;
+  }
+  @media (max-width: 600px){
+    .form-grid{ grid-template-columns:1fr; }
+  }
+
   footer{
     border-top:1px solid var(--line);
     padding:36px 5vw;
@@ -452,6 +521,47 @@
     </div>
     <p>Máte zájem o vystoupení #ČERNÁ na Vašem festivalu v sezóně 2027? Ozvěte se nám a domluvíme podrobnosti.</p>
     <a class="btn" href="https://www.cerna-black.cz" target="_blank" rel="noopener">Více o kapele</a>
+  </section>
+
+  <!-- INQUIRY FORM -->
+  <section class="inquiry">
+    <div class="inquiry-inner">
+      <div class="inquiry-head">
+        <h2>Mám zájem, <span>ozvěte se!</span></h2>
+        <p>Vyplňte kontaktní údaje a detaily o festivalu, ozveme se zpět.</p>
+      </div>
+      <form action="https://formsubmit.co/rknezu@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nová poptávka — #ČERNÁ">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="jmeno">Jméno</label>
+            <input type="text" id="jmeno" name="Jméno" placeholder="Vaše jméno" required>
+          </div>
+          <div class="form-field">
+            <label for="festival">Název festivalu</label>
+            <input type="text" id="festival" name="Název festivalu" placeholder="Název festivalu" required>
+          </div>
+          <div class="form-field">
+            <label for="datum">Datum konání</label>
+            <input type="text" id="datum" name="Datum konání" placeholder="např. 12.–14. 6. 2027" required>
+          </div>
+          <div class="form-field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="E-mail" placeholder="vas@email.cz" required>
+          </div>
+          <div class="form-field full">
+            <label for="telefon">Telefonní číslo</label>
+            <input type="tel" id="telefon" name="Telefonní číslo" placeholder="+420 000 000 000" required>
+          </div>
+        </div>
+        <div class="inquiry-submit">
+          <button type="submit" class="btn">Odeslat poptávku</button>
+        </div>
+      </form>
+    </div>
   </section>
 
   <footer>
