@@ -405,6 +405,21 @@
     font-size:12px; color:var(--bone-dim);
   }
 
+  @media (max-width: 640px){
+    .hero{
+      min-height:auto;
+      aspect-ratio: 3 / 4;
+      background-position: center 18%;
+    }
+    .hero-content{ padding-bottom:40px; }
+    .hero-top{ padding-top:20px; }
+  }
+  @media (max-width: 640px) and (orientation: landscape){
+    .hero{
+      aspect-ratio: 16 / 9;
+    }
+  }
+
   @media (max-width: 860px){
     .offer{ grid-template-columns:1fr; gap:40px; }
     .grid-3{ grid-template-columns:1fr; }
@@ -516,10 +531,10 @@
   <section class="cta">
     <div class="section-head" style="justify-content:center;">
       <span class="section-num mono">04</span>
-      <h2 class="section-title">Rezervujte si <span>#ČERNÁ</span></h2>
+      <h2 class="section-title">Více info <span>na webu</span></h2>
     </div>
     <p>Máte zájem o vystoupení #ČERNÁ na Vašem festivalu v sezóně 2027? Ozvěte se nám a domluvíme podrobnosti.</p>
-    <a class="btn" href="https://www.cerna-black.cz" target="_blank" rel="noopener">Více o kapele</a>
+    <a class="btn" href="https://www.cerna-black.cz" target="_blank" rel="noopener">Přejít na web</a>
   </section>
 
   <!-- INQUIRY FORM -->
